@@ -25,6 +25,9 @@ jobs:
       - name: Compilar o projeto
         run: npm run build
 
+      - name: Rodar Testes
+        run: npm test
+
       - name: Salvar o artefato
         uses: actions/upload-artifact@v5
         with:
