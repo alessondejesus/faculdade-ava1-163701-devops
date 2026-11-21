@@ -1,0 +1,12 @@
+- name: Preparar ambiente da API
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Verificar se o Docker está instalado
+      ansible.builtin.command: docker --version
+
+    - name: Gerar imagem da API
+      ansible.builtin.command: docker build -t faculdade-ava1-api:latest .
+      args:
+        chdir: "{{ playbook_dir }}/../.."
